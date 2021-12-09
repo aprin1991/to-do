@@ -1,0 +1,13 @@
+.todo-list-wrapper {
+  min-height: 55vh;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  padding-top: 15px;
+  .todo-container {
+    background: #a2ceed;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    min-height: calc(55vh - 60px);
+  }
+}

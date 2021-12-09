@@ -1,0 +1,69 @@
+$primaryColor: #1775b9;
+$secondaryColor: #a2ceed;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 400 !important;
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.bg-primary {
+  background: $primaryColor;
+}
+.bg-secondary {
+  background: $secondaryColor;
+}
+h2 {
+  text-align: left;
+}
+input,
+textarea,
+button {
+  &:focus {
+    outline: none;
+  }
+}
+.ripple-button {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  > .content {
+    position: relative;
+    z-index: 2;
+  }
+  > .ripple {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: $secondaryColor;
+    display: block;
+    content: "";
+    border-radius: 9999px;
+    opacity: 1;
+    animation: 0.8s linear 1 forwards ripple-effect;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1111;
+}

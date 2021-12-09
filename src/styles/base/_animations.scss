@@ -1,0 +1,28 @@
+@keyframes ripple-effect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(10);
+    opacity: 0.375;
+  }
+  100% {
+    transform: scale(35);
+    opacity: 0;
+  }
+}
+@keyframes loading-dots {
+  0% {
+    box-shadow: 12px 0 #fff, -12px 0 #00000022;
+    background: #fff;
+  }
+  33% {
+    box-shadow: 12px 0 #fff, -12px 0 #00000022;
+    background: #00000022;
+  }
+  66% {
+    box-shadow: 12px 0 #00000022, -12px 0 #fff;
+    background: #00000022;
+  }
+}

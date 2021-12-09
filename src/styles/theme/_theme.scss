@@ -1,0 +1,38 @@
+.text-input {
+  position: relative;
+  label {
+    pointer-events: none;
+    position: absolute;
+    color: #b1b0b0;
+    font-size: 15px;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+    transition: all ease 0.4s;
+  }
+  &.active {
+    label {
+      transform: scale(0.9);
+      top: -2px;
+      left: 4px;
+    }
+    input,
+    textarea {
+      transition: all ease 0.4s;
+      border-bottom-color: $secondaryColor;
+    }
+  }
+  input,
+  textarea {
+    transition: all ease 0.4s;
+
+    &:focus {
+      border-bottom-color: $secondaryColor;
+      ~ label {
+        transform: scale(0.9);
+        top: -2px;
+        left: 4px;
+      }
+    }
+  }
+}
