@@ -86,7 +86,7 @@ const TaskDetail: React.FC = (props) => {
   };
   return (
     <div className="text-center h-screen w-full">
-      <PageTitle title={`Edit #${id}`} />
+      <PageTitle title={`Edit`} />
       <div className="px-8 mt-4">
         <h2 className="text-bold text-2xl font-bold mb-4">Edit Task</h2>
         <form onSubmit={handleEditTask}>

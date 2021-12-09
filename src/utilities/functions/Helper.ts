@@ -12,27 +12,27 @@ const statuses = [
   {
     title: "in progress",
     siblings: [
-      { id: 1, title: "blocked" },
-      { id: 1, title: "inQa" },
+      { id: 2, title: "blocked" },
+      { id: 3, title: "In Qa" },
     ],
   },
   {
     title: "blocked",
-    siblings: [{ id: 1, title: "todo" }],
+    siblings: [{ id: 4, title: "todo" }],
   },
   {
-    title: "inQa",
+    title: "In Qa",
     siblings: [
-      { id: 1, title: "todo" },
-      { id: 1, title: "done" },
+      { id: 5, title: "todo" },
+      { id: 6, title: "done" },
     ],
   },
   {
     title: "done",
-    siblings: [{ id: 1, title: "deployed" }],
+    siblings: [{ id: 7, title: "deployed" }],
   },
   {
     title: "deployed",
-    siblings: [{ id: 1, title: "finished" }],
+    siblings: [{ id: 8, title: "finished" }],
   },
 ];
