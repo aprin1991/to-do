@@ -1,6 +1,12 @@
 import RippleButton from "button";
 import { PageTitle } from "components";
-import { useComponentVisible, useTask, useTaskDispatch } from "hooks";
+import {
+  useComponentVisible,
+  useTask,
+  useTaskDispatch,
+  useTaskHistoryDispatch,
+  useTasksHistory,
+} from "hooks";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { arrowDown, editIcon } from "utilities/icons";
@@ -11,6 +17,8 @@ import { calcStatus } from "utilities/functions/Helper";
 const TaskDetail: React.FC = (props) => {
   let tasksList = useTask() || [];
   let taskDispatch = useTaskDispatch();
+  let taskHistoryDispatch = useTaskHistoryDispatch();
+  let taskHistory = useTasksHistory();
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(false);
   let navigate = useNavigate();
@@ -58,24 +66,38 @@ const TaskDetail: React.FC = (props) => {
     } else {
       let cloneTasks = [...tasksList];
       const findIndex = tasksList.findIndex((el) => el?.id === +id);
+      const obj = {
+        id: tasksList[findIndex]?.id,
+        title: values?.title,
+        description: values?.description,
+        status: currentState,
+      };
       if (currentState === "deployed") {
         cloneTasks = filter(
           cloneTasks,
           (el) => el.id !== tasksList[findIndex]?.id
         );
       } else {
-        const obj = {
-          id: tasksList[findIndex]?.id,
-          title: values?.title,
-          description: values?.description,
-          status: currentState,
-        };
         cloneTasks[findIndex] = obj;
       }
       taskDispatch(cloneTasks);
+      if (
+        tasksList[findIndex]?.status !== currentState ||
+        tasksList[findIndex]?.title !== values?.title ||
+        tasksList[findIndex]?.title !== values?.description
+      ) {
+        let history = {
+          prev: tasksList[findIndex],
+          next: obj,
+        };
+
+        taskHistoryDispatch([...taskHistory, history]);
+      }
+
       closeTask();
     }
   };
+  console.log(taskHistory);
   const handleSelectStatus = (status: { title: string; id: number }) => {
     setCurrentState(status?.title);
     setIsComponentVisible(false);
