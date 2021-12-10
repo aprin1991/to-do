@@ -63,7 +63,6 @@ const TaskDetail: React.FC = (props) => {
           cloneTasks,
           (el) => el.id !== tasksList[findIndex]?.id
         );
-        console.log("cloneTasks", cloneTasks);
       } else {
         const obj = {
           id: tasksList[findIndex]?.id,
