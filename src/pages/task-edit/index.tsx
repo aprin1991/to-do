@@ -149,8 +149,8 @@ const TaskDetail: React.FC = (props) => {
               })}
             </div>
           </div>
-          <div className="flex justify-between items-center">
-            <div className="w-1/2 pr-2">
+          <div className="flex justify-between items-center py-2 md:py-0 flex-wrap">
+            <div className="w-full md:w-1/2 mb-2 md:mb-0 md:pr-2">
               <RippleButton
                 type="submit"
                 classes="w-full bg-primary p-3 text-white font-semibold text-base text-center rounded-md"
@@ -161,7 +161,7 @@ const TaskDetail: React.FC = (props) => {
                 </div>
               </RippleButton>
             </div>
-            <div className="w-1/2 pl-2">
+            <div className="w-full md:w-1/2 md:pl-2">
               <RippleButton
                 classes="w-full bg-white border border-gray-200  p-3 text-gray-600 font-semibold text-base text-center rounded-md"
                 onClick={closeTask}

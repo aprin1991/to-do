@@ -22,7 +22,7 @@ const TodoCard: React.FC<TaskProps> = ({ data }) => {
   return (
     <div className="w-1/2 px-1 md:px-2 mb-4">
       <div className="bg-white p-2 rounded-md shadow-md ">
-        <h4 className="text-black text-base font-semibold mb-2">
+        <h4 className="text-black text-base font-semibold mb-2 truncate">
           {data?.title}
         </h4>
         <p className="text-xs mb-12 h-12 break-all">

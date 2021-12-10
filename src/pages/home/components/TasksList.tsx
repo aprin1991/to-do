@@ -4,7 +4,6 @@ import TodoCard from "./TodoCard";
 import map from "lodash/map";
 const TasksList: React.FC = () => {
   let tasksList = useTask();
-  console.log("tasksList", tasksList);
   return (
     <div className="todo-list-wrapper bg-primary text-left ">
       <h4 className="text-white text-xl mb-4 px-9">Tasks</h4>
