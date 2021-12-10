@@ -1,10 +1,7 @@
 import React from "react";
-import { createSearchParams, Link, useNavigate } from "react-router-dom";
-import { editIcon } from "utilities/icons";
 import { TaskProps } from "../types";
 
 const TodoCard: React.FC<TaskProps> = ({ data }) => {
-  const navigate = useNavigate();
   const trimString = (text: string) => {
     if (text?.length > 70) {
       return `${text?.slice(0, 67)}...`;
