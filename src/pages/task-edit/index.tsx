@@ -58,7 +58,7 @@ const TaskDetail: React.FC = (props) => {
     } else {
       let cloneTasks = [...tasksList];
       const findIndex = tasksList.findIndex((el) => el?.id === +id);
-      if (currentState === "finished") {
+      if (currentState === "deployed") {
         cloneTasks = filter(
           cloneTasks,
           (el) => el.id !== tasksList[findIndex]?.id

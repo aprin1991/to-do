@@ -33,6 +33,6 @@ const statuses = [
   },
   {
     title: "deployed",
-    siblings: [{ id: 8, title: "finished" }],
+    siblings: [],
   },
 ];

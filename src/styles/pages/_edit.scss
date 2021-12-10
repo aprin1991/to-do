@@ -6,6 +6,12 @@
   z-index: 55;
   &.show {
     max-height: 250px;
-    min-height: 75px;
+    min-height: 120px;
+  }
+  > div {
+    transition: all ease 0.3s;
+    &:hover {
+      background: #e5e7eb;
+    }
   }
 }

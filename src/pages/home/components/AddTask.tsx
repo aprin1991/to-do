@@ -58,7 +58,7 @@ const AddTask: React.FC = () => {
         </div>
         <div
           className={`flex flex-col text-input ${
-            values?.title?.trim() !== "" ? "active" : ""
+            values?.description?.trim() !== "" ? "active" : ""
           }`}
         >
           <textarea
